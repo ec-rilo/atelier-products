@@ -13,7 +13,8 @@ CREATE TABLE IF NOT EXISTS features (
   value TEXT,
   CONSTRAINT product
     FOREIGN KEY(product_id) 
-	    REFERENCES products(id)
+	    REFERENCES products(id),
+  PRIMARY KEY(product_id, feature)
 );
 
 CREATE TABLE IF NOT EXISTS styles (
