@@ -15,3 +15,5 @@
           1. `style_id,url,thumbnail_url`
        5. skus.csv
           1. `id,style_id,size,quantity`
+ 3. run load.sh
+    1. Make sure to set your database name in DB_NAME
