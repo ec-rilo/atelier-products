@@ -21,3 +21,6 @@ psql -U $DB_USER -d $DB_NAME -c "COPY photos FROM '$SCRIPT_DIR/../raw/photos.csv
 
 echo 'Copying skus...'
 psql -U $DB_USER -d $DB_NAME -c "COPY skus FROM '$SCRIPT_DIR/../raw/skus.csv' DELIMITER ',' CSV HEADER;"
+
+echo 'Copying related...'
+psql -U $DB_USER -d $DB_NAME -c "COPY related FROM '$SCRIPT_DIR/../raw/related.csv' DELIMITER ',' CSV HEADER;"

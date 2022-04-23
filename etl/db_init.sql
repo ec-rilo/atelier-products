@@ -48,3 +48,27 @@ CREATE TABLE IF NOT EXISTS skus (
     FOREIGN KEY(style_id) 
 	    REFERENCES styles(id)
 );
+
+CREATE TABLE IF NOT EXISTS related (
+  current_id INTEGER,
+  related_id INTEGER,
+  CONSTRAINT current
+    FOREIGN KEY(current_id) 
+      REFERENCES products(id),
+  CONSTRAINT related
+    FOREIGN KEY(related_id) 
+      REFERENCES products(id),
+  PRIMARY KEY(current_id, related_id)
+);
+
+CREATE INDEX IF NOT EXISTS photos_style_id
+  ON photos(style_id);
+
+CREATE INDEX IF NOT EXISTS features_product_id
+  ON features(product_id);
+
+CREATE INDEX IF NOT EXISTS skus_style_id
+  ON skus(style_id);
+
+CREATE INDEX IF NOT EXISTS skus_product_id
+  ON skus(id);
