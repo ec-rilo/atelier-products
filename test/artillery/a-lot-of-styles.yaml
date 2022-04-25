@@ -2,14 +2,14 @@ config:
   target: "http://localhost:3000"
   phases:
     - duration: 10
-      arrivalRate: 5
+      arrivalRate: 10
       name: Warm up
-    - duration: 20
+    - duration: 50
       arrivalRate: 5
-      rampTo: 50
+      rampTo: 1000
       name: Ramp up load
-    - duration: 20
-      arrivalRate: 50
+    - duration: 60
+      arrivalRate: 1000
       name: Sustained load
   payload:
     path: "testids.csv"
