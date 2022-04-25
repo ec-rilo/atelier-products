@@ -17,7 +17,19 @@ config:
       - "product_id"
 
 scenarios:
-  - name: "Request products"
+  - name: "Request product styles"
     flow:
       - get:
           url: "/products/{{ product_id }}/styles"
+  - name: "Request products"
+    flow:
+      - get:
+          url: "/products"
+  - name: "Request related products"
+    flow:
+      - get:
+          url: "/products/{{ product_id }}/related"
+  - name: "Request product features"
+    flow:
+      - get:
+          url: "/products/{{ product_id }}"
