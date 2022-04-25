@@ -6,7 +6,7 @@ module.exports = {
   features: (product_id) => db.any(queries.features, [product_id])
     .then(data => data[0]),
   styles: (product_id) => db.any(queries.styles, [product_id])
-    .then(data => ({ product_id: 1, results: data })),
+    .then(data => ({ product_id: product_id, results: data })),
   related: (product_id) => db.any(queries.related, [product_id])
     .then(data => data[0].related),
 }
