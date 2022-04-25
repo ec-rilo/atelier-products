@@ -1,3 +1,9 @@
+var http = require('http');
+var https = require('https');
+
+http.globalAgent.maxSockets = Infinity;
+https.globalAgent.maxSockets = Infinity;
+
 const express = require('express');
 const app = express();
 
@@ -19,4 +25,7 @@ app.get('/products/:product_id/related', routes.related);
 /* Start server */
 const port = process.env.PORT || 3000;
 
-app.listen(port, () => console.log(`Listening on port http://localhost:${port}/`));
+const server = app.listen(port, () => console.log(`Listening on port http://localhost:${port}/`));
+
+module.exports.app = app;
+module.exports.server = server;

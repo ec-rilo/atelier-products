@@ -1,0 +1,23 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 10
+      arrivalRate: 5
+      name: Warm up
+    - duration: 20
+      arrivalRate: 5
+      rampTo: 50
+      name: Ramp up load
+    - duration: 20
+      arrivalRate: 50
+      name: Sustained load
+  payload:
+    path: "testids.csv"
+    fields:
+      - "product_id"
+
+scenarios:
+  - name: "Request products"
+    flow:
+      - get:
+          url: "/products/{{ product_id }}/styles"

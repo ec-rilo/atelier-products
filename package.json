@@ -6,7 +6,7 @@
   "scripts": {
     "start:dev": "nodemon --watch server server/index.js",
     "start": "node server/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --forceExit"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,10 @@
     "express": "^4.17.3",
     "pg": "^8.7.3",
     "pg-promise": "^10.11.1"
+  },
+  "devDependencies": {
+    "jest": "^28.0.0",
+    "jstat": "^1.9.5",
+    "supertest": "^6.2.2"
   }
 }
