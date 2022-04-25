@@ -72,3 +72,6 @@ CREATE INDEX IF NOT EXISTS skus_style_id
 
 CREATE INDEX IF NOT EXISTS skus_product_id
   ON skus(id);
+
+CREATE INDEX IF NOT EXISTS styles_product_id
+  ON styles(product_id);
