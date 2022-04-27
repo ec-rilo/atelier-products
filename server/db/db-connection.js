@@ -2,6 +2,8 @@ const Promise = require('bluebird');
 
 const util = require('util');
 
+require('dotenv').config()
+
 const initOptions = {
   promiseLib: Promise,
   capSQL: true,
@@ -9,11 +11,17 @@ const initOptions = {
 const pgp = require('pg-promise')(initOptions);
 
 const cn = {
-  host: 'localhost',
-  port: 5432,
-  database: 'testdb',
-  user: 'postgres',
-  password: 'postgres',
+  host:     process.env.HOST     || 'localhost',
+  port:     process.env.DB_PORT     || 5432,
+  database: process.env.DB       || 'atelier',
+  user:     process.env.DB_USER  || 'postgres',
+  password: process.env.DB_PASS  ||'postgres',
 }
+
+console.log(cn.host);
+console.log(cn.port);
+console.log(cn.database);
+console.log(cn.user);
+console.log(cn.password);
 
 module.exports = pgp(cn);
