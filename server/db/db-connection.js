@@ -15,7 +15,7 @@ const cn = {
   port:     process.env.DB_PORT  || 5432,
   database: process.env.DB       || 'atelier',
   user:     process.env.DB_USER  || 'postgres',
-  password: process.env.DB_PASS  ||'postgres',
+  password: process.env.DB_PASS  || 'postgres',
 }
 
 module.exports = pgp(cn);
