@@ -82,7 +82,7 @@ Returns all product level information for a specified product id.
 #### Parameters
 | Parameter  | Type    | Description                                       |
 |------------|---------|---------------------------------------------------|
-| product_id | Integer | Selects the page of results to return. Default 1. |
+| product_id | Integer | Required ID of the product for which data should be returned. |
 
 #### Response
 ```json
@@ -112,7 +112,7 @@ Returns the all styles available for the given product.
 #### Parameters
 | Parameter  | Type    | Description                                       |
 |------------|---------|---------------------------------------------------|
-| product_id | Integer | Selects the page of results to return. Default 1. |
+| product_id | Integer | Required ID of the product for which data should be returned |
 
 #### Response
 ```json
@@ -183,7 +183,7 @@ Returns the id's of products related to the product specified.
 #### Parameters
 | Parameter  | Type    | Description                                       |
 |------------|---------|---------------------------------------------------|
-| product_id | Integer | Selects the page of results to return. Default 1. |
+| product_id | Integer | Required ID of the product for which data should be returned |
 
 #### Response
 ```json
